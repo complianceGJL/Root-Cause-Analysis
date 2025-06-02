@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Root Cause Analysis - Fishbone Technique</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1>Root Cause Analysis - Fishbone Diagram</h1>
+            <div class="toolbar">
+                <div class="methodology-toggle">
+                    <label class="form-label">Methodology:</label>
+                    <select id="methodology" class="form-control">
+                        <option value="6M">6M Method</option>
+                        <option value="4P">4P Method</option>
+                    </select>
+                </div>
+                <div class="action-buttons">
+                    <button id="save-btn" class="btn btn--secondary btn--sm">Save Progress</button>
+                    <button id="load-btn" class="btn btn--secondary btn--sm">Load Progress</button>
+                    <button id="export-btn" class="btn btn--primary btn--sm">Export Report</button>
+                    <button id="clear-btn" class="btn btn--outline btn--sm">Clear All</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <section class="problem-section">
+                <div class="form-group">
+                    <label for="problem-statement" class="form-label">Problem Statement</label>
+                    <textarea 
+                        id="problem-statement" 
+                        class="form-control problem-input" 
+                        placeholder="Define the main problem you want to analyze..."
+                        rows="3"
+                        maxlength="500"></textarea>
+                    <div class="char-counter">
+                        <span id="char-count">0</span>/500 characters
+                    </div>
+                </div>
+            </section>
+
+            <section class="diagram-section">
+                <div class="diagram-container">
+                    <svg id="fishbone-svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet">
+                        <!-- Fishbone diagram will be generated here -->
+                    </svg>
+                </div>
+            </section>
+
+            <section class="analysis-panel">
+                <div class="panel-tabs">
+                    <button class="tab-btn active" data-tab="causes">Causes</button>
+                    <button class="tab-btn" data-tab="analysis">Analysis</button>
+                    <button class="tab-btn" data-tab="report">Report</button>
+                </div>
+
+                <div id="causes-tab" class="tab-content active">
+                    <div class="causes-list">
+                        <h3>Selected Cause Details</h3>
+                        <div id="cause-details" class="cause-details">
+                            <p class="help-text">Click on any branch or cause in the diagram to view and edit details.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="analysis-tab" class="tab-content">
+                    <div class="analysis-tools">
+                        <h3>5 Whys Analysis</h3>
+                        <div id="five-whys" class="five-whys-container">
+                            <p class="help-text">Select a cause to perform 5 Whys analysis.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="report-tab" class="tab-content">
+                    <div class="report-summary">
+                        <h3>Analysis Summary</h3>
+                        <div id="report-content" class="report-content">
+                            <div class="summary-stats">
+                                <div class="stat-card">
+                                    <div class="stat-number" id="total-causes">0</div>
+                                    <div class="stat-label">Total Causes</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-number" id="high-priority-causes">0</div>
+                                    <div class="stat-label">High Priority</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-number" id="root-causes">0</div>
+                                    <div class="stat-label">Root Causes</div>
+                                </div>
+                            </div>
+                            <div class="priority-breakdown">
+                                <h4>Priority Breakdown</h4>
+                                <div id="priority-chart" class="priority-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modal for cause editing -->
+        <div id="cause-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-title">Edit Cause</h3>
+                    <button id="modal-close" class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="cause-text" class="form-label">Cause Description</label>
+                        <input type="text" id="cause-text" class="form-control" placeholder="Enter cause description">
+                    </div>
+                    <div class="form-group">
+                        <label for="cause-priority" class="form-label">Priority Level</label>
+                        <select id="cause-priority" class="form-control">
+                            <option value="1">1 - Very Low</option>
+                            <option value="2">2 - Low</option>
+                            <option value="3">3 - Medium</option>
+                            <option value="4">4 - High</option>
+                            <option value="5">5 - Critical</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cause-status" class="form-label">Status</label>
+                        <select id="cause-status" class="form-control">
+                            <option value="Not Started">Not Started</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Under Review">Under Review</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cause-comments" class="form-label">Comments</label>
+                        <textarea id="cause-comments" class="form-control" rows="3" placeholder="Add comments or notes..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" id="is-root-cause"> Mark as Root Cause
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="delete-cause-btn" class="btn btn--outline">Delete Cause</button>
+                    <div class="modal-actions">
+                        <button id="cancel-cause-btn" class="btn btn--secondary">Cancel</button>
+                        <button id="save-cause-btn" class="btn btn--primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Modal -->
+        <div id="help-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>How to Use Fishbone Analysis</h3>
+                    <button class="modal-close" onclick="closeHelpModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="help-content">
+                        <h4>Getting Started</h4>
+                        <ol>
+                            <li>Define your problem clearly in the problem statement</li>
+                            <li>Choose between 6M or 4P methodology</li>
+                            <li>Click on category branches to add potential causes</li>
+                            <li>Use sub-causes to break down complex causes</li>
+                            <li>Assign priority levels and add comments</li>
+                            <li>Identify root causes through analysis</li>
+                        </ol>
+                        
+                        <h4>Methodologies</h4>
+                        <p><strong>6M Method:</strong> Manpower, Method, Machine, Material, Measurement, Mother Nature</p>
+                        <p><strong>4P Method:</strong> Policy, Process, People, Plant</p>
+                        
+                        <h4>5 Whys Technique</h4>
+                        <p>Ask "Why?" five times to drill down to root causes. This helps identify the underlying reasons behind surface-level problems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            <button id="help-btn" class="btn btn--outline btn--sm">Help</button>
+            <span class="footer-text">Root Cause Analysis Tool - Fishbone Technique</span>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
