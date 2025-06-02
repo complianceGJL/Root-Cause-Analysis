@@ -8,8 +8,7 @@ An interactive HTML-based tool for conducting Root Cause Analysis (RCA) using th
 
 **(Recommended: Add an actual screenshot or GIF of your application. Upload your image (e.g., `screenshot.png`) to an `assets` folder, preferably within `rca-fishbone-analyzer/assets/screenshot.png` or at the root in `assets/screenshot.png`, and update the path below if necessary.)**
 
-
-*Fig. 1: Main interface of the RCA Fishbone Application (Replace with your actual screenshot and update the path if needed. Ensure the image file is in your repository, e.g., in an 'assets' folder.)*
+![RCA FishMain interface of the RCA Fishbone Application (Replace with your actual screenshot and update the path if needed. Ensure the image file is in your repository, e.g., in an 'assets' folder.)*
 
 ---
 
@@ -56,9 +55,9 @@ An interactive HTML-based tool for conducting Root Cause Analysis (RCA) using th
 
 You can try the application live here, hosted on GitHub Pages (assuming `index.html` is inside the `rca-fishbone-analyzer` folder):
 
-➡️ **[RCA Fishbone App Live Demo](https://ComplianceGJL.github.io/friendly-octo-goggles/rca-fishbone-analyzer/)**
+➡️ **[RCA Fishbone App Live Demo](https://ComplianceGJL.github.io/Root-Cause-Analysis/rca-fishbone-analyzer/)**
 
-*(Ensure your GitHub Pages is configured to serve from the `main` branch and your `index.html` is located at `rca-fishbone-analyzer/index.html` for this URL to work correctly.)*
+*(Ensure your GitHub Pages is configured to serve from the `main` branch and your `index.html` is located at `rca-fishbone-analyzer/index.html` for this URL to work correctly with the repository named "Root-Cause-Analysis".)*
 
 ---
 
@@ -69,7 +68,7 @@ This application is designed to be easily embedded into SharePoint Online modern
 **Steps to Integrate:**
 
 1.  **Get the GitHub Pages URL**:
-    *   Ensure your application is deployed to GitHub Pages. The URL will be: `https://ComplianceGJL.github.io/friendly-octo-goggles/rca-fishbone-analyzer/`.
+    *   Ensure your application is deployed to GitHub Pages from the repository named "Root-Cause-Analysis". The URL will be: `https://ComplianceGJL.github.io/Root-Cause-Analysis/rca-fishbone-analyzer/`.
     *   This assumes your main HTML file is `index.html` located inside the `rca-fishbone-analyzer` directory in your repository.
 
 2.  **Navigate to Your SharePoint Page**:
@@ -85,7 +84,7 @@ This application is designed to be easily embedded into SharePoint Online modern
 5.  **Configure the Embed Web Part**:
     *   A property pane will open on the right (or a box in the center of the web part).
     *   In the field labeled "Website address or embed code", paste the full GitHub Pages URL of your application:
-        *   `https://ComplianceGJL.github.io/friendly-octo-goggles/rca-fishbone-analyzer/`
+        *   `https://ComplianceGJL.github.io/Root-Cause-Analysis/rca-fishbone-analyzer/`
 
 6.  **Adjust Sizing (Optional)**:
     *   The Embed web part will attempt to display the content. You might need to adjust the height if it doesn't display correctly. Sometimes setting a fixed pixel height in the web part properties works better than `100%`.
@@ -97,7 +96,7 @@ Your RCA Fishbone application should now be visible and interactive within your 
 
 **Troubleshooting SharePoint Integration:**
 *   **"Embedding content from this website isn't allowed"**: Your SharePoint administrator may need to add `ComplianceGJL.github.io` to the list of allowed domains in the HTML Field Security settings at the Site Collection level. (Site Settings > HTML Field Security).
-*   **Content Not Displaying (404 Error)**: Ensure your GitHub Pages site is correctly deployed, that the `rca-fishbone-analyzer` folder and `index.html` within it exist on the `main` branch (or whichever branch you are using for GitHub Pages), and that the repository is public if using a free GitHub account. It can take a few minutes for GitHub Pages to update after a push.
+*   **Content Not Displaying (404 Error)**: Ensure your GitHub Pages site is correctly deployed from the repository named "Root-Cause-Analysis", that the `rca-fishbone-analyzer` folder and `index.html` within it exist on the `main` branch (or whichever branch you are using for GitHub Pages), and that the repository is public if using a free GitHub account. It can take a few minutes for GitHub Pages to update after a push or repository rename.
 *   **Content Not Displaying (Blank)**: Check the browser's developer console (usually F12) for errors. Ensure all paths to CSS, JS, and image files within your HTML are relative and correct for the GitHub Pages hosting structure.
 
 ---
@@ -144,7 +143,7 @@ A brief overview of the important files and directories in this repository:
 
 Contributions are welcome! If you have suggestions for improvements, bug fixes, or new features, please feel free to:
 
-1.  Fork the repository (`https://github.com/ComplianceGJL/friendly-octo-goggles/fork`).
+1.  Fork the repository (`https://github.com/ComplianceGJL/Root-Cause-Analysis/fork`).
 2.  Create a new branch (`git checkout -b feature/AmazingFeature`).
 3.  Make your changes.
 4.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
@@ -165,8 +164,6 @@ This project is licensed under the **MIT License**.
 
 ## Contact
 
-If you have any questions, encounter issues, or want to provide feedback, please open an issue in this GitHub repository: [ComplianceGJL/friendly-octo-goggles/issues](https://github.com/ComplianceGJL/friendly-octo-goggles/issues)
+If you have any questions, encounter issues, or want to provide feedback, please open an issue in this GitHub repository: [ComplianceGJL/Root-Cause-Analysis/issues](https://github.com/ComplianceGJL/Root-Cause-Analysis/issues)
 
 Created by: **ComplianceGJL**
-
-
