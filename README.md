@@ -9,7 +9,7 @@ An interactive HTML-based tool for conducting Root Cause Analysis (RCA) using th
 **(Recommended: Add an actual screenshot or GIF of your application. Upload your image (e.g., `screenshot.png`) to an `assets` folder, preferably within `rca-fishbone-analyzer/assets/screenshot.png` or at the root in `assets/screenshot.png`, and update the path below if necessary.)**
 
 
-*Fig. 1: Main interface of the RCA Fishbone Application (Update this screenshot and path)*
+*Fig. 1: Main interface of the RCA Fishbone Application (Replace with your actual screenshot and update the path if needed. Ensure the image file is in your repository, e.g., in an 'assets' folder.)*
 
 ---
 
@@ -85,7 +85,7 @@ This application is designed to be easily embedded into SharePoint Online modern
 5.  **Configure the Embed Web Part**:
     *   A property pane will open on the right (or a box in the center of the web part).
     *   In the field labeled "Website address or embed code", paste the full GitHub Pages URL of your application:
-        *   `https://CarlosPerAn.github.io/friendly-octo-goggles/rca-fishbone-analyzer/`
+        *   `https://ComplianceGJL.github.io/friendly-octo-goggles/rca-fishbone-analyzer/`
 
 6.  **Adjust Sizing (Optional)**:
     *   The Embed web part will attempt to display the content. You might need to adjust the height if it doesn't display correctly. Sometimes setting a fixed pixel height in the web part properties works better than `100%`.
@@ -144,7 +144,7 @@ A brief overview of the important files and directories in this repository:
 
 Contributions are welcome! If you have suggestions for improvements, bug fixes, or new features, please feel free to:
 
-1.  Fork the repository (`https://github.com/CarlosPerAn/friendly-octo-goggles/fork`).
+1.  Fork the repository (`https://github.com/ComplianceGJL/friendly-octo-goggles/fork`).
 2.  Create a new branch (`git checkout -b feature/AmazingFeature`).
 3.  Make your changes.
 4.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
@@ -165,7 +165,8 @@ This project is licensed under the **MIT License**.
 
 ## Contact
 
-If you have any questions, encounter issues, or want to provide feedback, please open an issue in this GitHub repository: [CarlosPerAn/friendly-octo-goggles/issues](https://github.com/CarlosPerAn/friendly-octo-goggles/issues)
+If you have any questions, encounter issues, or want to provide feedback, please open an issue in this GitHub repository: [ComplianceGJL/friendly-octo-goggles/issues](https://github.com/ComplianceGJL/friendly-octo-goggles/issues)
 
-Created by: **CommplianceGJL**
+Created by: **ComplianceGJL**
+
 
